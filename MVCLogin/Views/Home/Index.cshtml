@@ -13,11 +13,11 @@
     <!-- Full-width images with number and caption text -->
 
     @{
-        for(int i=0; i < Model.Count; i++)
+        for (int i = 0; i < Model.Count; i++)
         {
             <div class="mySlides">
-                <div class="numbertext">@(i+1) / @Model.Count</div>
-                <img src="~/images/Soelvkikkert.png" style="width:100%">
+                <div class="numbertext">@(i + 1) / @Model.Count</div>
+                <img src="~/images/@Model[i].ImagePath" style="width:100%">
                 <div class="text">@Model[i].Name</div>
             </div>
         }
@@ -30,12 +30,12 @@
 
 <!-- The dots/circles -->
 <div style="text-align:center">
-     @{ 
-         for(int i=0; i < Model.Count; i++)
-         {
-             <span class="dot" onclick="currentSlide(@(i+1))"></span>
-         }
-     }
+    @{
+        for (int i = 0; i < Model.Count; i++)
+        {
+            <span class="dot" onclick="currentSlide(@(i+1))"></span>
+        }
+    }
 </div>
 
 @section Scripts{
